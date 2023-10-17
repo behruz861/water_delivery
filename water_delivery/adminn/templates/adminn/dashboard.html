@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+
+    <h2>Bottles on Stock</h2>
+    <p>Quantity: {{ dashboard_data.bottles.quantity }}</p>
+
+    <h2>Current Orders</h2>
+    <ul>
+      {% for order in dashboard_data.current_orders.all %}
+        <li>{{ order }}</li>
+      {% empty %}
+        <li>No current orders</li>
+      {% endfor %}
+    </ul>
+</body>
+</html>
